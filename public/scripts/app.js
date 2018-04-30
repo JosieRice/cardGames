@@ -1,6 +1,27 @@
 // waits for DOM to be ready to load this file
 $(document).ready(function() {
 
+  // all of the aJax calls and things that need to happen on the front end
+  
+  const handArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  const suits = [C, S, D, H];
+
+
+  class GoofSpiel {
+    constructor(hand) {
+      this.opponentsHand = hand;
+      this.yourHand = hand;
+      this.prizeDeck = hand;
+    }
+  }
+
+
+
+
+
+
+
+
   // finds selected card value in the DOM and
   // reduces it to A, J, Q, K, or a number
   function findCardValue() {
@@ -77,25 +98,6 @@ $(document).ready(function() {
     loadEventHanders();
   }
 
-  // returns cardRank parsed into capital letters for face cards and Ace.
-  function parseCardValues(cardRank) {
-    if (cardRank === 1) {
-      cardRank = "A";
-    }
-    if (cardRank === 2 || 3 || 4 || 5 || 6 || 7 || 8 || 9 || 10) {
-      cardRank = cardRank;
-    }
-    if (cardRank === 11) {
-      cardRank = "J";
-    }
-    if (cardRank === 12) {
-      cardRank = "Q";
-    }
-    if (cardRank === 13) {
-      cardRank = "K";
-    }
-    return cardRank;
-  }
 
   // clear played cards
   function clearPlayedCards() {
@@ -164,60 +166,7 @@ $(document).ready(function() {
     $(`<li><div class="card back">*</div></li>`).appendTo( ".opponent-hand" );
   }
 
-  // IIFE receives initial game state data and runs function to populate the game board
-  (function startGameDataPull (){
-    $.ajax({
-    url: `/game/${gameID}/start/${userID}`,
-    method: "GET",
-    success: (data) => { updateBoard(data); }
-    });
-  })();
 
-  // sets an interval ID so that we can stop the repeated database queries
-  // for the player check.
-  var nIntervId;
-
-  // turns turn status check on timer
-  function startOpponentCheckTimer() {
-    nIntervId = setInterval(checkForOpponent, 5000);
-  }
-
-  // stops turn status check
-  function stopOpponentCheckTimer() {
-    clearInterval(nIntervId);
-  }
-
-  //check if opponent present, if present sets opponent toggle to found,
-  //and skips route
-  function checkForOpponent() {
-    if (opponentToggle === "not found") {
-      $.ajax({
-        url: `/game/${gameID}/waiting/${userID}`,
-        method: "GET",
-        success: (data) => { opponentToggle = data; }
-      });
-    }
-    stopOpponentCheckTimer();
-  }
-
-  // Clicking the neutral deck in the middle checks if opponent is done
-  // and tries to refresh page
-  function turnStatusCheck() {
-    console.log('turnSTATUSCHECK');
-    $.ajax({
-      url: `/game/${gameID}/update/${userID}`,
-      method: "GET",
-      success: (data) => {
-        if (data.neutral === 0) {
-          console.log("ZERO DATA RECEIVED");
-          return;
-        } else {
-          console.log("WE GOT THE DATA... EVEN IF ITS WRONG");
-          updateBoard(data);
-        }
-      }
-    });
-  }
 
   // houses all event handlers in a nice neat package
   function loadEventHanders() {
