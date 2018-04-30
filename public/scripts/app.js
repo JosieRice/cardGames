@@ -1,14 +1,6 @@
 // waits for DOM to be ready to load this file
 $(document).ready(function() {
 
-  // sets a variable to the game table as stored in the data tag on the body
-  var gameIDElement = document.getElementById('game-board');
-  var gameID = gameIDElement.dataset.gameid;
-  // sets a variable to the user id as stored in teh data tag on the body
-  var userID = gameIDElement.dataset.userid;
-  // a way to identify if players have joined the game. I don't care for it.
-  var opponentToggle = "not found";
-
   // finds selected card value in the DOM and
   // reduces it to A, J, Q, K, or a number
   function findCardValue() {

@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "local": "./node_modules/.bin/nodemon --ignore public/",
-    "knex": "./node_modules/.bin/knex"
+    "local": "./node_modules/.bin/nodemon --ignore public/"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
@@ -17,15 +16,11 @@
     "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "knex": "^0.11.7",
-    "knex-logger": "^0.1.0",
     "morgan": "^1.7.0",
     "node-sass-middleware": "^0.9.8",
-    "pg": "^6.0.2",
     "skeleton-css": "^2.0.4"
   },
   "devDependencies": {
-    "nodemon": "^1.17.3",
-    "sqlite3": "^3.1.4"
+    "nodemon": "^1.17.3"
   }
 }
