@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Now Playing Goofspiel on Card.Game</title>
+    <!-- Sets viewport width for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <!-- Normalize and css template from Skeleton css -->
+    <link rel="stylesheet" href="/vendor/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/skeleton.css" type="text/css" />
+    <!-- CSS cards -->
+    <link rel="stylesheet" href="/vendor/selfthinker-CSS-Playing-Cards-7e0e0f2/cards.css" type="text/css" />
+    <!-- Our stylesheet populated from sass .scss file -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <!-- Imports fonts: Great Vibes, Vollkorn, Cormorant Infant -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Great+Vibes|Vollkorn" rel="stylesheet">
+    <!-- grabs our javascript code -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+  </head>
+
+  <!-- class is for styling, data tag is for linking to game state in database -->
+  <body class="game-board" id="game-board" data-gameid="<%= gameid %>" data-userid="<%= userid %>">
+    <!-- sets up main container for Skeleton Responsive layout -->
+    <div class="container">
+      <!-- sets up row system for Skeleton Responsive layout -->
+      <div class="row">
+        <!-- sets full width area for opponents hand -->
+        <div class="twelve columns handbar">
+          <!-- css cards styling for opponents hand -->
+          <div class="playingCards faceImages centerHand">
+            <!-- Sets opponents hand to overlap cards -->
+            <ul class="hand opponent-hand">
+              <!-- *** THIS IS WHERE OPPONENTS HAND IS INSERTED -->
+            </ul>
+          </div>
+        </div>
+        <!-- Game Score Div -->
+        <div>
+          <div class="two columns play-area">
+          <h2>Game Score</h2>
+          <p class="opponents-score"></p>
+          <p class="your-score"></p>
+        </div>
+
+        <!-- Skeleton setting play area width and css cards-->
+        <div class="ten columns play-area playingCards faceImages play-grid">
+
+          <!-- Deck of cards between players -->
+          <ul class="deck stock">
+
+          </ul>
+
+          <!-- upturned card to bid on blank right now-->
+          <div class="upcard">
+          </div>
+
+          <!-- players chosen card for bidding -->
+          <div class="player-downcard">
+          </div>
+
+          <!-- opponents chosen card for bidding -->
+          <div class="opponent-downcard">
+          </div>
+
+          <!-- after round is scored, upturned card to bid on blank right now-->
+          <div class="upcard-scored">
+          </div>
+
+          <!-- after round is scored, players chosen card for bidding -->
+          <div class="player-downcard-scored">
+          </div>
+
+          <!-- after round is scored, opponents chosen card for bidding -->
+          <div class="opponent-downcard-scored">
+          </div>
+
+        </div>
+      </div>
+      <!-- player card bar 100% width -->
+      <div class="twelve columns handbar">
+        <!-- css cards set face up -->
+        <div class="playingCards faceImages rotateHand centerHand">
+
+          <!-- css cards set to stack in hand -->
+          <ul class="hand" id="player-hand">
+            <!-- *** this is where players hand gets populated -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

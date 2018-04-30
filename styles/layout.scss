@@ -1,0 +1,187 @@
+// Main colour scheme declared - colour choices are a work in progress
+$black-cards-color: #000000;
+$red-cards-color: #FF1600;
+$card-table-green: #076324;
+$dark-accent-color: #663300;
+$light-accent-color: #EDEEE0;
+
+
+// * { outline: 1px dashed red; }
+
+// pushes down the body of the lobby to below the fixed header
+.lobby {
+  padding-top: 100px;
+}
+
+// fixed header for lobby page
+header {
+  position: fixed;
+  background-color: $dark-accent-color;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+}
+
+// fixed logo for header in lobby
+.logo {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    right: 2vw;
+    left: 2vw;
+    z-index: 1;
+}
+
+// fixed footer in lobby
+footer {
+  position:fixed;
+  background-color: $dark-accent-color;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+}
+
+  // lines up title text with bottom of fixed header
+  h1.main-title {
+    margin-top: 38px;
+  }
+
+// body styling for lobby with nested styling
+body {
+  background-color: $light-accent-color;
+  font-family: 'Vollkorn', serif;
+
+  // styles header 1 in body
+  h1 {
+    color: $black-cards-color;
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+  }
+
+  // styles header 2 in body
+  h2 {
+    color: $black-cards-color;
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  // the border for the games selection in the lobby
+  .games {
+    border-radius: 16px 16px 16px 16px;
+    border: 2px solid #000000;
+    background-color: $card-table-green;
+    height: 75vh;
+  }
+
+  // the border for the leaderboard in the lobby
+  .leader-board {
+    border-radius: 16px 16px 16px 16px;
+    border: 2px solid #000000;
+    background-color: $card-table-green;
+    height: 75vh;
+  }
+
+}
+
+
+// START OF STYLING FOR THE BODY
+
+
+// sets game.ejs table values so there's no scroll bar
+// and the background is green
+body.game-board {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  height: 96vh;
+  background-color: $card-table-green;
+}
+
+// handbar is the strip where the players and opponents hands are
+// this is split into three columns and sized based on view height
+.handbar {
+  height: 14vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+// sets area in the middle between player/opponent hands to
+// be based on view height
+.play-area {
+  height: 56vh;
+}
+
+// makes a 3 x 6 grid that is responsive and uniform with no gaps in play-area
+.play-grid {
+  display: grid;
+  grid-template-rows: repeat(3, 33.3%);
+  grid-template-columns: repeat(6, 16%);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  grid-auto-rows: 10px;
+}
+
+// a class on player and opponents hands to put them roughly center
+// I don't love this solution
+.centerHand {
+  grid-column: 2;
+}
+
+// sets the grid coordinate where the stock or deck of cards in the
+// neutral play area will sit
+.stock {
+  grid-row: 2;
+  grid-column: 5;
+}
+
+// sets the grid coordinate where a faceup card from the stock will go
+.upcard {
+  grid-row: 2;
+  grid-column: 4;
+}
+
+// sets the grid coordinate where the players card choice goes
+.player-downcard {
+  grid-row: 3;
+  grid-column: 4;
+}
+
+// sets the grid coordinate where the opponents card choice goes
+.opponent-downcard {
+  grid-row: 1;
+  grid-column: 4;
+}
+
+// sets the grid coordinate where last completed card sits next to score
+.upcard-scored {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+// sets the grid coordinate where last completed card sits next to score
+.player-downcard-scored {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+// sets the grid coordinate where last completed card sits next to score
+.opponent-downcard-scored {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+p {
+  color: $black-cards-color;
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  font-size: 150%;
+}
+
+.playmebutton {
+  text-align: center;
+}

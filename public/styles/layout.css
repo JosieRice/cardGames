@@ -1,0 +1,144 @@
+.lobby {
+  padding-top: 100px;
+}
+
+header {
+  position: fixed;
+  background-color: #663300;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  right: 2vw;
+  left: 2vw;
+  z-index: 1;
+}
+
+footer {
+  position: fixed;
+  background-color: #663300;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+}
+
+h1.main-title {
+  margin-top: 38px;
+}
+
+body {
+  background-color: #EDEEE0;
+  font-family: 'Vollkorn', serif;
+}
+
+body h1 {
+  color: #000000;
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+}
+
+body h2 {
+  color: #000000;
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  margin-top: 15px;
+}
+
+body .games {
+  border-radius: 16px 16px 16px 16px;
+  border: 2px solid #000000;
+  background-color: #076324;
+  height: 75vh;
+}
+
+body .leader-board {
+  border-radius: 16px 16px 16px 16px;
+  border: 2px solid #000000;
+  background-color: #076324;
+  height: 75vh;
+}
+
+body.game-board {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  height: 96vh;
+  background-color: #076324;
+}
+
+.handbar {
+  height: 14vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.play-area {
+  height: 56vh;
+}
+
+.play-grid {
+  display: grid;
+  grid-template-rows: repeat(3, 33.3%);
+  grid-template-columns: repeat(6, 16%);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  grid-auto-rows: 10px;
+}
+
+.centerHand {
+  grid-column: 2;
+}
+
+.stock {
+  grid-row: 2;
+  grid-column: 5;
+}
+
+.upcard {
+  grid-row: 2;
+  grid-column: 4;
+}
+
+.player-downcard {
+  grid-row: 3;
+  grid-column: 4;
+}
+
+.opponent-downcard {
+  grid-row: 1;
+  grid-column: 4;
+}
+
+.upcard-scored {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.player-downcard-scored {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.opponent-downcard-scored {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+p {
+  color: #000000;
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  font-size: 150%;
+}
+
+.playmebutton {
+  text-align: center;
+}
